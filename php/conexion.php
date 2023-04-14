@@ -1,16 +1,15 @@
 <?php
 
-
-$HOSTNAME = "localhost";
-$USERNAME = "root";
-$PASSWORD = "";
-$NAME = "tienda_noche";
+$HOSTNAME = "sql106.epizy.com";
+$USERNAME = "epiz_34005965";
+$PASSWORD = "bRFnq2feXTzAAc";
+$NAME = "epiz_34005965_tienda_noche";
 
 $conexion = mysqli_connect($HOSTNAME, $USERNAME, $PASSWORD, $NAME);
 
 if(!$conexion){
 
-	echo 'Error al conectar';
+	echo 'No funciono pero ya casi';
 }
 
 ?>

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+
+header{
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.7);
+    height: 100px;
+}
+
+.navbar{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+}
+
+.image_logo{
+    padding-left: 50px ;
+    display: flex;
+    width: 25%;
+}
+
+.logo {
+   width: 80px; 
+   height: 80px;
+}
+
+.marca{
+    line-height: 100px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.list{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    line-height: 100px;
+}
+
+.elements{
+    font-size: 20px;
+    color: #fff;
+}
+
+.elements a{
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    width: 90px;
+    padding: 1rem 1rem;
+    margin: 1em;
+}
+
+.elements a:hover{
+    background-color: #000;
+    transition: .5s;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgba(255, 255, 255, 0.9);
+}
+
+.navbar_menu{
+    line-height: 100px;
+    padding-right: 50px;
+}
+
+.navbar_opciones{ 
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 15em;
+    height: 3em;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+.opcion{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+}
