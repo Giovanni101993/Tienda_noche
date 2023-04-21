@@ -25,6 +25,7 @@ $registros = mysqli_num_rows($resultado);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/estilo.css" rel="stylesheet" type="text/css">
     <link href="../css/estiloCatalogo.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../img/logo.png">
    <title>Catálogo</title>
 </head>
 
@@ -130,6 +131,7 @@ $registros = mysqli_num_rows($resultado);
                         <p class="details">
                             <?php echo $row['DESCRIP_PROD']; ?>
                         </p>
+                        <button class="btn-add-cart"><a href="detalles.php" class="btn-detail">Detalles</a></button>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
 

@@ -1,5 +1,5 @@
 <?php
-include_once 'conexion.php';
+include_once 'conexion_local.php';
 
 $Id = $_REQUEST['ID_PRODUCTO'];
 $Nombre = $_REQUEST['NOMBRE_PROD'];
@@ -27,5 +27,5 @@ else {
     exit();
 }
     
-mysqli_close($conexion);
+//mysqli_close($conexion);
 ?>

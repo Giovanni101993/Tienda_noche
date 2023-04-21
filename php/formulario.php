@@ -6,37 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cssForm.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="shortcut icon" href="../img/logo.png">
     <title>Registro de productos</title>
 </head>
 <body>
-<!--
-<header>
-<div class="navbar">
-        <figure class="image_logo">
-          <img src="../img/logo.png" alt="" class="logo"/>
-          <div class="marca">Tienda Online</div>
-        </figure>
-    
-        <div class="navbar_elements">
-          <ul class="list">
-            <li class="elements"><a href="#">Incio</a></li>
-            <li class="elements"><a href="#">Catálogo</a></li>
-            <li class="elements"><a href="#">Registro</a></li>
-          </ul>
-        </div>
-        <div class="navbar_menu">
-          <select name="" id="" class="navbar_opciones">
-            <option selected value="" class="opcion">Seleccione una opción</option>
-            <option value="" class="opcion">Tecnología</option>
-            <option value="" class="opcion">Aseo</option>
-            <option value="" class="opcion">Motos</option>
-            <option value="" class="opcion">Escolar</option>
-            <option value="" class="opcion">Hogar</option>
-          </select>
-        </div>
-      </div>
-</header> -->
-
 <main class="form"> 
     <form action="registroProd.php" method="post">
         <div class="form_container">

@@ -19,6 +19,11 @@ img{
     width: 100%;
 }
 
+.btn-detail {
+    text-decoration: none;
+    color: #fff;
+}
+
 /*------------------------------*/
 .header-container{
     max-width: 77%;
