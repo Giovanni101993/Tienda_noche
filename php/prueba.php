@@ -1,5 +1,5 @@
 <?php 
-require_once 'conexion_local.php';
+require_once 'conexion.php';
 
 $consulta= "SELECT `nombres` FROM `usuarios`";
 

@@ -1,5 +1,5 @@
 <?php
-include_once 'conexion_local.php';
+include_once 'conexion.php';
 
 $Id = $_REQUEST['ID_PRODUCTO'];
 $Nombre = $_REQUEST['NOMBRE_PROD'];

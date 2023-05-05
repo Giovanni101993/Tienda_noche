@@ -1,7 +1,7 @@
 <?php
 
 
-include_once 'conexion_local.php';
+include_once 'conexion.php';
 
 
 //Recibir los datos y almacenarlos en variables

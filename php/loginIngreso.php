@@ -1,6 +1,6 @@
 <?php
 
-include_once 'conexion_local.php';
+include_once 'conexion.php';
 
 $User = $_REQUEST['user'];
 $Password = $_REQUEST['password'];

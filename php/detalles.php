@@ -1,5 +1,5 @@
 <?php
-require_once 'conexion_local.php';
+require_once 'conexion.php';
 require_once 'config.php';
 
 $id=isset($_GET['ID_PRODUCTO']) ? $_GET['ID_PRODUCTO']:'';
@@ -114,7 +114,7 @@ if ($registros>0){
                     </div>
                 </div>
                 <div class="col-md-6 order-md-2">
-                <h2><?php echo "$nombre"; ?></h2>      
+                <h2><?php echo $nombre; ?></h2>      
                  <?php if ($descuento>0){  ?>  
 
                 <p><del>$<?php echo $precio; ?></del></p>

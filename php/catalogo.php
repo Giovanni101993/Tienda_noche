@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexion_local.php';
+require_once 'conexion.php';
 require_once 'config.php';
 
 $categoria = @$_REQUEST["opciones"];
