@@ -118,7 +118,7 @@ const showHTML = () => {
 		rowProduct.append(containerProduct);
 
 		total =
-			total + parseInt(product.quantity * product.price.slice(1));
+			total + parseInt(product.quantity * product.price);
 		totalOfProducts = totalOfProducts + product.quantity;
 	});
 

@@ -1,22 +1,32 @@
 <?php
-require_once 'conexion.php';
+require_once 'conexion_local.php';
+require_once 'config.php';
 
-$id = 1;
-$consulta = "SELECT count(ID_PRODUCTO) FROM productos WHERE ID_PRODUCTO='$id' AND CANTIDAD>0";
+$id=isset($_GET['ID_PRODUCTO']) ? $_GET['ID_PRODUCTO']:'';
+$token= isset($_GET['token']) ? $_GET['token']:'';
+if ($id== '' && $token==''){
+    echo 'error al procesar la peticion';
+    exit;
+}else{
+    $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
 
-$resultado = mysqli_query($conexion, $consulta);
+    if($token==$token_tmp){
+        $consulta = "SELECT count(ID_PRODUCTO) FROM productos WHERE ID_PRODUCTO='$id' AND CANTIDAD>0";
 
-$registros = mysqli_num_rows($resultado);
+        $resultado = mysqli_query($conexion, $consulta);
+        
+        $registros = mysqli_num_rows($resultado);
+    
 
 
 if ($registros>0){
-    $consulta1 = "SELECT NOMBRE_PROD, DESCRIP_PROD, PRECIO_PROD, DESC_PROD FROM productos 
-    WHERE ID_PRODUCTO='$id' AND CANTIDAD>0 LIMIT 1";
+    $consulta = "SELECT NOMBRE_PROD, DESCRIP_PROD, PRECIO_PROD, DESC_PROD FROM productos 
+    WHERE ID_PRODUCTO='$id' AND CANTIDAD=1 LIMIT 1";
 
-    $resultado1 = mysqli_query($conexion, $consulta1);
-    $registros1 = mysqli_num_rows($resultado1);
+    $resultado = mysqli_query($conexion, $consulta);
+    $registros = mysqli_num_rows($resultado);
 
-    foreach ($resultado1 as $row){
+    foreach ($resultado as $row){
         $nombre = $row['NOMBRE_PROD'];
         $descripcion = $row['DESCRIP_PROD'];
         $precio = $row['PRECIO_PROD'];
@@ -34,10 +44,8 @@ if ($registros>0){
             $directorio = dir($dir_imagenes);
                 while (($archivo = $directorio->read())!=false) {
                             if ($archivo != 'principal.jpg' && strpos($archivo, 'jpg') || strpos($archivo, 'jpeg') || strpos($archivo, 'png')){
-                                $imagenes[] = $dir_imagenes . $archivo;
-                                    
+                                $imagenes[] = $dir_imagenes . $archivo; 
                             }
-
                 }
 
                 $directorio->close();
@@ -48,6 +56,8 @@ if ($registros>0){
     echo 'Error al procesar la peticion';
     exit;
 }
+    }}
+
 ?>
 
 <!DOCTYPE html>
@@ -80,10 +90,10 @@ if ($registros>0){
                     <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="<?php echo $rutaImg ?>" class="d-block w-100">
+                                <img src="<?php echo $rutaImg; ?>" class="d-block w-100">
 
                             </div>
-                            <?php foreach ($imagenes as $img); { ?>
+                            <?php foreach ($imagenes as $img) { ?>
 
                             
                             <div class="carousel-item">
@@ -102,12 +112,9 @@ if ($registros>0){
                         </button>
 
                     </div>
-
-
-                    
                 </div>
                 <div class="col-md-6 order-md-2">
-                <h2><?php echo $nombre; ?></h2>      
+                <h2><?php echo "$nombre"; ?></h2>      
                  <?php if ($descuento>0){  ?>  
 
                 <p><del>$<?php echo $precio; ?></del></p>

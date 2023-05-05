@@ -1,6 +1,4 @@
 <?php
-
-
 $HOSTNAME = "localhost";
 $USERNAME = "root";
 $PASSWORD = "";
@@ -12,5 +10,7 @@ if(!$conexion){
 
 	echo 'Error al conectar';
 }
-
 ?>
+
+
+

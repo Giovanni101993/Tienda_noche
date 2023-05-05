@@ -11,6 +11,7 @@
 </head>
 <body>
 <main class="form"> 
+<h1>Registro de productos</h1>
     <form action="registroProd.php" method="post">
         <div class="form_container">
 
@@ -56,10 +57,10 @@
                 <span class="form_line"></span>
             </div>
             <input type="submit" class="form_submit" value="Guardar Producto">
+            <input type="submit" class="form_submit" onclick="location.href = '../index.html' " value="Volver a página principal">
         </div>    
 
     </form>
-    <a href="../index.html"><input type="submit" class="form_submit" value="Volver a página principal"></input></a> 
 </main>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
-require_once 'conexion.php';
+require_once 'conexion_local.php';
+require_once 'config.php';
 
 $categoria = @$_REQUEST["opciones"];
 
@@ -126,12 +127,13 @@ $registros = mysqli_num_rows($resultado);
                             <?php echo $row['NOMBRE_PROD']; ?>
                         </h2>
                         <p class="price">$
-                            <?php echo number_format($row['PRECIO_PROD'], 2, ',', '.'); ?>
+                            <?php echo $row['PRECIO_PROD']; ?>
                         </p>
                         <p class="details">
                             <?php echo $row['DESCRIP_PROD']; ?>
                         </p>
-                        <button class="btn-add-cart"><a href="detalles.php" class="btn-detail">Detalles</a></button>
+                        <button class="btn-add-cart"><a href="detalles.php?id=<?php echo $row['ID_PRODUCTO']; ?>&token=<?php echo hash_hmac('sha1', $row['ID_PRODUCTO'], KEY_TOKEN);?>" 
+                        class="btn-detail">Detalles</a></button>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
 
